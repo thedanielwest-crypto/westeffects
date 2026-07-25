@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Westeffects — Westbeat · Westworks · Westlight</title>
+<meta name="description" content="Westeffects is the umbrella for Westbeat (music production), Westworks (apps and software), and Westlight (photography).">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Westeffects">
+<meta property="og:description" content="Music. Software. Photography. Three crafts, one name.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://westeffects.com">
+
+<link rel="icon" href="assets/westworks-logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="bg-mark" aria-hidden="true">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="currentColor" stroke-width="1.2">
+      <rect x="10" y="10" width="180" height="180" rx="28" />
+      <rect x="26" y="26" width="148" height="148" rx="20" />
+      <rect x="42" y="42" width="116" height="116" rx="14" />
+      <rect x="58" y="58" width="84" height="84" rx="10" />
+    </g>
+    <path d="M100 8 L112 96 L192 100 L112 104 L100 192 L88 104 L8 100 L88 96 Z" fill="currentColor" />
+    <circle cx="100" cy="100" r="7" fill="#000" />
+  </svg>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">westeffects.com</p>
+    <h1 class="wordmark">WESTEFFECTS</h1>
+    <p class="tagline">Sound. Software. Sight.</p>
+    <p class="subtext">Three crafts, run under one name. Pick a door below.</p>
+    <a href="#brands" class="scroll-cue" aria-label="Scroll to brands">
+      <span></span>
+    </a>
+  </div>
+</header>
+
+<main id="brands" class="brands">
+
+  <article class="card card-beat">
+    <div class="card-glow"></div>
+    <img class="card-logo" src="assets/westbeat-logo.png" alt="Westbeat logo">
+    <p class="card-tag">Original production, mixing &amp; studio sessions.</p>
+    <p class="card-desc">
+      Westbeat is the studio side of the house — beats, mixes, and full productions
+      built from scratch. If a track needs finishing, mixing, or making from nothing,
+      this is the door to knock on.
+    </p>
+    <a class="card-cta" href="mailto:westbeat@westeffects.com">
+      Get in touch <span aria-hidden="true">→</span>
+    </a>
+  </article>
+
+  <article class="card card-works">
+    <div class="card-glow"></div>
+    <img class="card-logo" src="assets/westworks-logo.png" alt="Westworks logo">
+    <p class="card-tag">Apps and software, built end-to-end.</p>
+    <p class="card-desc">
+      Westworks designs and ships apps and tools — from idea to a working,
+      deployed product. Sparkbank is a Westworks build.
+    </p>
+    <a class="card-cta" href="mailto:westworks@westeffects.com">
+      Get in touch <span aria-hidden="true">→</span>
+    </a>
+  </article>
+
+  <article class="card card-light">
+    <div class="card-glow"></div>
+    <img class="card-logo" src="assets/westlight-logo.png" alt="Westlight logo">
+    <p class="card-tag">Photography for people, places &amp; moments worth keeping.</p>
+    <p class="card-desc">
+      Westlight is the camera side — portraits, events, and landscape work,
+      shot and edited with care.
+    </p>
+    <a class="card-cta" href="mailto:westlight@westeffects.com">
+      Get in touch <span aria-hidden="true">→</span>
+    </a>
+  </article>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Westeffects.</p>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
