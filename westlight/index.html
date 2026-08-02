@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WESTLIGHT — Light Photography | Westeffects</title>
+<meta name="description" content="Westlight — light photography with meaningful connection. Sparks, Fire and Light Painting from Brisbane, Australia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --bg-raised:#131313;
+    --line:#242424;
+    --text:#f5f3ef;
+    --muted:#8b8b8f;
+    --sparks:#ffb347;
+    --fire:#ff4e2e;
+    --lp:#8b5cf6;
+    --lp2:#22d3ee;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; line-height:1.5;}
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%;}
+  h1,h2,.display{font-family:'Bebas Neue'; letter-spacing:.03em;}
+
+  header{
+    position:sticky; top:0; z-index:20;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 6vw;
+    background:rgba(10,10,10,.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .back{font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); transition:color .2s;}
+  .back:hover{color:var(--text);}
+  .brandmark{font-family:'Bebas Neue'; font-size:24px; letter-spacing:.08em;}
+
+  .hero{
+    position:relative; min-height:74vh; display:flex; align-items:flex-end;
+    background:
+      linear-gradient(180deg, rgba(10,10,10,.15) 0%, rgba(10,10,10,.55) 55%, var(--bg) 100%),
+      url('full/lp-04.jpg') center 30%/cover no-repeat;
+    padding:8vh 6vw 7vh;
+  }
+  .hero-inner{position:relative; z-index:1; max-width:760px;}
+  .hero .eyebrow{
+    font-size:12px; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:var(--sparks);
+    margin-bottom:16px;
+  }
+  .hero h1{font-size:clamp(64px,13vw,168px); line-height:.85;}
+  .hero p{margin-top:20px; font-size:clamp(15px,1.8vw,19px); color:#d8d6d0; max-width:520px;}
+
+  .trail{width:100%; height:36px; margin:0 0 -1px;}
+
+  section.cat{padding:9vh 6vw 6vh;}
+  .cat-head{display:flex; align-items:baseline; gap:18px; margin-bottom:34px; flex-wrap:wrap;}
+  .cat-head h2{font-size:clamp(38px,6vw,64px);}
+  .cat-head p{color:var(--muted); font-size:14px; max-width:440px;}
+
+  .cat-sparks .cat-head h2{color:var(--sparks);}
+  .cat-fire .cat-head h2{color:var(--fire);}
+  .cat-lp .cat-head h2{color:var(--lp2);}
+
+  .grid{
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:18px;
+  }
+  .tile{
+    position:relative; aspect-ratio:1/1; border-radius:8px; overflow:hidden; cursor:zoom-in;
+    background:var(--bg-raised); border:1px solid var(--line);
+  }
+  .tile img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+  .tile:hover img{transform:scale(1.08);}
+  .tile .overlay{
+    position:absolute; inset:0; display:flex; align-items:flex-end; padding:14px;
+    background:linear-gradient(0deg, rgba(0,0,0,.65), transparent 45%);
+    opacity:0; transition:opacity .25s;
+  }
+  .tile:hover .overlay{opacity:1;}
+  .tile .overlay span{font-size:12px; letter-spacing:.05em; color:#fff; font-weight:600;}
+
+  footer{text-align:center; padding:50px 6vw 60px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); margin-top:6vh;}
+  footer a{border-bottom:1px solid transparent;}
+  footer a:hover{border-color:var(--muted);}
+  footer .credit{margin-top:10px; font-size:11px; color:#5f5f62;}
+
+  /* Lightbox */
+  .lightbox{
+    position:fixed; inset:0; background:rgba(6,6,6,.96); z-index:100;
+    display:none; align-items:center; justify-content:center; padding:5vh 4vw;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:100%; max-height:88vh; border-radius:4px; box-shadow:0 30px 80px rgba(0,0,0,.6);}
+  .lightbox .close, .lightbox .nav{
+    position:absolute; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.15);
+    color:#fff; border-radius:50%; width:44px; height:44px; display:flex; align-items:center; justify-content:center;
+    cursor:pointer; font-size:20px; transition:.2s; backdrop-filter:blur(6px);
+  }
+  .lightbox .close:hover, .lightbox .nav:hover{background:rgba(255,255,255,.14);}
+  .lightbox .close{top:24px; right:24px;}
+  .lightbox .prev{left:24px; top:50%; transform:translateY(-50%);}
+  .lightbox .next{right:24px; top:50%; transform:translateY(-50%);}
+  .lightbox .caption{
+    position:absolute; bottom:28px; left:0; right:0; text-align:center; font-size:13px; color:var(--muted);
+    letter-spacing:.03em;
+  }
+  @media (max-width:640px){
+    .lightbox .prev, .lightbox .next{width:38px; height:38px; font-size:16px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="back">&larr; Westeffects</a>
+  <span class="brandmark">WESTLIGHT</span>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Light Photography &middot; Brisbane, Australia</div>
+    <h1>Westlight</h1>
+    <p>Using light as the medium to tell stories and capture intrigue. Three disciplines, one long exposure at a time — sparks, fire and light painting.</p>
+  </div>
+</div>
+
+<svg class="trail" viewBox="0 0 1200 36" preserveAspectRatio="none"><path d="M0 18 C 200 2, 300 34, 500 18 S 800 2, 1000 18 S 1150 30, 1200 18" stroke="url(#g1)" stroke-width="2" fill="none" opacity=".6"/><defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#ffb347"/><stop offset=".5" stop-color="#ff4e2e"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs></svg>
+
+<section class="cat cat-sparks" id="sparks">
+  <div class="cat-head">
+    <h2>Sparks</h2>
+    <p>Spun steel wool, caught mid-shower — orbs, fountains and embers frozen in a single frame.</p>
+  </div>
+  <div class="grid" id="grid-sparks"></div>
+</section>
+
+<section class="cat cat-fire" id="fire">
+  <div class="cat-head">
+    <h2>Fire</h2>
+    <p>Live flame on poi and staff, traced through the dark in loops and arcs.</p>
+  </div>
+  <div class="grid" id="grid-fire"></div>
+</section>
+
+<section class="cat cat-lp" id="light-painting">
+  <div class="cat-head">
+    <h2>Light Painting</h2>
+    <p>Colour, drawn through space with LED and long exposure — where the photographer becomes the brush.</p>
+  </div>
+  <div class="grid" id="grid-lp"></div>
+</section>
+
+<footer>
+  Prints available soon &mdash; <a href="mailto:westlight@westeffects.com">get in touch</a> to be notified.
+  <div class="credit">Images &copy; Thomas McShane &amp; Craig English Photography &mdash; credited individually on each photo. &copy; Westeffects &middot; <a href="/">Back to Westeffects</a></div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <div class="close" id="lbClose">&times;</div>
+  <div class="nav prev" id="lbPrev">&#8249;</div>
+  <img id="lbImg" src="" alt="">
+  <div class="nav next" id="lbNext">&#8250;</div>
+  <div class="caption" id="lbCaption"></div>
+</div>
+
+<script>
+  const categories = {
+    sparks: {
+      label: "Sparks",
+      items: [
+        {full:"full/sparks-01.jpg", thumb:"thumb/sparks-01.jpg", title:"Sparks 01", credit:"Thomas McShane"},
+        {full:"full/sparks-02.jpg", thumb:"thumb/sparks-02.jpg", title:"Sparks 02", credit:"Thomas McShane"},
+        {full:"full/sparks-03.jpg", thumb:"thumb/sparks-03.jpg", title:"Sparkles in My Coffee", credit:"Thomas McShane"},
+        {full:"full/sparks-04.jpg", thumb:"thumb/sparks-04.jpg", title:"Embers in The Sky", credit:"Craig English Photography"},
+        {full:"full/sparks-05.jpg", thumb:"thumb/sparks-05.jpg", title:"Floating Orb", credit:"Craig English Photography"},
+        {full:"full/sparks-06.jpg", thumb:"thumb/sparks-06.jpg", title:"Sparks 06", credit:"Craig English Photography"},
+        {full:"full/sparks-07.jpg", thumb:"thumb/sparks-07.jpg", title:"Sparks 07", credit:"Thomas McShane"},
+        {full:"full/sparks-08.jpg", thumb:"thumb/sparks-08.jpg", title:"Life's a Hell Ride", credit:"Craig English Photography"}
+      ]
+    },
+    fire: {
+      label: "Fire",
+      items: [
+        {full:"full/fire-01.jpg", thumb:"thumb/fire-01.jpg", title:"Fire 01", credit:"Thomas McShane"},
+        {full:"full/fire-02.jpg", thumb:"thumb/fire-02.jpg", title:"Lyre on Fyre", credit:"Craig English Photography"},
+        {full:"full/fire-03.jpg", thumb:"thumb/fire-03.jpg", title:"Pineapple Fireball", credit:"Craig English Photography"}
+      ]
+    },
+    lp: {
+      label: "Light Painting",
+      items: [
+        {full:"full/lp-01.jpg", thumb:"thumb/lp-01.jpg", title:"Light Painting 01", credit:"Thomas McShane"},
+        {full:"full/lp-02.jpg", thumb:"thumb/lp-02.jpg", title:"Light Painting 02", credit:"Thomas McShane"},
+        {full:"full/lp-03.jpg", thumb:"thumb/lp-03.jpg", title:"Light Painting 03", credit:"Thomas McShane"},
+        {full:"full/lp-04.jpg", thumb:"thumb/lp-04.jpg", title:"Spinning Through The Universe", credit:"Thomas McShane"}
+      ]
+    }
+  };
+
+  let flatItems = [];
+  let currentIndex = 0;
+
+  Object.entries(categories).forEach(([key, cat]) => {
+    const gridId = key === 'lp' ? 'grid-lp' : `grid-${key}`;
+    const grid = document.getElementById(gridId);
+    grid.innerHTML = cat.items.map((item) => {
+      const idx = flatItems.length;
+      flatItems.push(item);
+      return `<div class="tile" data-index="${idx}">
+        <img loading="lazy" src="${item.thumb}" alt="${item.title}">
+        <div class="overlay"><span>${item.title}${item.credit ? ' · © ' + item.credit : ''}</span></div>
+      </div>`;
+    }).join('');
+  });
+
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCaption = document.getElementById('lbCaption');
+
+  function openLightbox(i){
+    currentIndex = i;
+    updateLightbox();
+    lightbox.classList.add('open');
+  }
+  function updateLightbox(){
+    const item = flatItems[currentIndex];
+    lbImg.src = item.full;
+    lbImg.alt = item.title;
+    lbCaption.textContent = item.credit ? `${item.title} — © ${item.credit}` : item.title;
+  }
+  document.querySelectorAll('.tile').forEach(tile => {
+    tile.addEventListener('click', () => openLightbox(parseInt(tile.dataset.index)));
+  });
+  document.getElementById('lbClose').addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', (e) => { if(e.target === lightbox) lightbox.classList.remove('open'); });
+  document.getElementById('lbPrev').addEventListener('click', () => { currentIndex = (currentIndex - 1 + flatItems.length) % flatItems.length; updateLightbox(); });
+  document.getElementById('lbNext').addEventListener('click', () => { currentIndex = (currentIndex + 1) % flatItems.length; updateLightbox(); });
+  document.addEventListener('keydown', (e) => {
+    if(!lightbox.classList.contains('open')) return;
+    if(e.key === 'Escape') lightbox.classList.remove('open');
+    if(e.key === 'ArrowLeft') document.getElementById('lbPrev').click();
+    if(e.key === 'ArrowRight') document.getElementById('lbNext').click();
+  });
+</script>
+</body>
+</html>

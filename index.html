@@ -5,99 +5,147 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Westeffects — Westbeat · Westworks · Westlight</title>
 <meta name="description" content="Westeffects is the umbrella for Westbeat (music production), Westworks (apps and software), and Westlight (photography).">
-
-<!-- Open Graph -->
 <meta property="og:title" content="Westeffects">
 <meta property="og:description" content="Music. Software. Photography. Three passions, one name.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://westeffects.com">
-
-<link rel="icon" href="assets/westworks-logo.png">
-
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/favicon-180x180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a; --bg-raised:#131313; --line:#242424; --text:#f5f3ef; --muted:#8b8b8f;
+    --beat-a:#00e5ff; --beat-b:#ff2fd6;
+    --works:#ff5a1f;
+    --light-a:#ffb347; --light-b:#8b5cf6;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; line-height:1.5;}
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%;}
+  h1,h2,h3{font-family:'Space Grotesk';}
 
-<link rel="stylesheet" href="styles.css">
+  header{
+    text-align:center; padding:16vh 6vw 8vh; position:relative; overflow:hidden;
+  }
+  header::before{
+    content:""; position:absolute; inset:-30% -10% auto -10%; height:150%;
+    background:
+      radial-gradient(ellipse 40% 35% at 20% 20%, rgba(0,229,255,.10), transparent 60%),
+      radial-gradient(ellipse 40% 35% at 50% 30%, rgba(255,90,31,.10), transparent 60%),
+      radial-gradient(ellipse 40% 35% at 80% 20%, rgba(139,92,246,.10), transparent 60%);
+    z-index:0;
+  }
+  .header-inner{position:relative; z-index:1;}
+  .kicker{font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); margin-bottom:20px;}
+  h1{font-size:clamp(44px,9vw,104px); font-weight:700; letter-spacing:-.02em;}
+  header p.tag{margin-top:20px; color:var(--muted); font-size:clamp(14px,1.8vw,17px);}
+  header p.sub{margin-top:8px; color:#5f5f62; font-size:13px;}
+
+  .brands{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--line); border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  @media (max-width:860px){ .brands{grid-template-columns:1fr;} }
+
+  .brand-card{
+    background:var(--bg); padding:8vh 5vw; position:relative; overflow:hidden;
+    display:flex; flex-direction:column; gap:20px; min-height:520px;
+    transition:background .3s;
+  }
+  .brand-card:hover{background:var(--bg-raised);}
+  .brand-card .glow{
+    position:absolute; inset:0; opacity:0; transition:opacity .4s; pointer-events:none;
+  }
+  .brand-card:hover .glow{opacity:1;}
+
+  .card-beat .glow{background:radial-gradient(circle at 30% 20%, rgba(0,229,255,.14), transparent 55%), radial-gradient(circle at 75% 75%, rgba(255,47,214,.12), transparent 55%);}
+  .card-works .glow{background:radial-gradient(circle at 30% 20%, rgba(255,90,31,.16), transparent 55%);}
+  .card-light .glow{background:radial-gradient(circle at 30% 20%, rgba(255,179,71,.14), transparent 55%), radial-gradient(circle at 75% 75%, rgba(139,92,246,.14), transparent 55%);}
+
+  .brand-card .content{position:relative; z-index:1; display:flex; flex-direction:column; gap:20px; height:100%;}
+  .brand-card .mark{width:64px; height:64px; object-fit:contain;}
+  .brand-card h2{font-size:26px; font-weight:700; letter-spacing:-.01em;}
+  .brand-card .tagline{font-size:15px; font-weight:600; color:var(--muted);}
+  .brand-card .desc{font-size:14px; color:var(--muted); line-height:1.7; flex:1;}
+  .card-beat .tagline{color:var(--beat-a);}
+  .card-works .tagline{color:var(--works);}
+  .card-light .tagline{color:var(--light-a);}
+
+  .enter{
+    margin-top:auto; display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    padding:12px 0; border-top:1px solid var(--line); width:fit-content;
+    transition:gap .2s;
+  }
+  .brand-card:hover .enter{gap:14px;}
+
+  footer{text-align:center; padding:50px 6vw 60px; color:var(--muted); font-size:12px;}
+  footer a{border-bottom:1px solid transparent;}
+  footer a:hover{border-color:var(--muted);}
+</style>
 </head>
 <body>
 
-<div class="bg-mark" aria-hidden="true">
-  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <g fill="none" stroke="currentColor" stroke-width="1.2">
-      <rect x="10" y="10" width="180" height="180" rx="28" />
-      <rect x="26" y="26" width="148" height="148" rx="20" />
-      <rect x="42" y="42" width="116" height="116" rx="14" />
-      <rect x="58" y="58" width="84" height="84" rx="10" />
-    </g>
-    <path d="M100 8 L112 96 L192 100 L112 104 L100 192 L88 104 L8 100 L88 96 Z" fill="currentColor" />
-    <circle cx="100" cy="100" r="7" fill="#000" />
-  </svg>
-</div>
-
-<header class="hero">
-  <div class="hero-inner">
-    <p class="eyebrow">westeffects.com</p>
-    <h1 class="wordmark">WESTEFFECTS</h1>
-    <p class="tagline">Sound. Software. Sight.</p>
-    <p class="subtext">Three passions, one name. Pick a path below.</p>
-    <a href="#brands" class="scroll-cue" aria-label="Scroll to brands">
-      <span></span>
-    </a>
+<header>
+  <div class="header-inner">
+    <div class="kicker">westeffects.com</div>
+    <h1>WESTEFFECTS</h1>
+    <p class="tag">Sound. Software. Sight.</p>
+    <p class="sub">Three passions, one name. Pick a path below.</p>
   </div>
 </header>
 
-<main id="brands" class="brands">
+<div class="brands" id="brands">
 
-  <article class="card card-beat">
-    <div class="card-glow"></div>
-    <img class="card-logo" src="assets/westbeat-logo.png" alt="Westbeat logo">
-    <p class="card-tag">Original Music Production, Live Sets & Old-school Vinyl Sessions.</p>
-    <p class="card-desc">
-      Driven by a love for creating meaningful, moving experiences through
-      atmospheric textures and dancefloor-ready rhythms, discover Westbeat's
-      original releases and mixes on your streaming platforms.
-    </p>
-    <a class="card-cta" href="mailto:westbeat@westeffects.com">
-      Get in touch <span aria-hidden="true">→</span>
-    </a>
-  </article>
+  <a class="brand-card card-beat" href="/westbeat/">
+    <div class="glow"></div>
+    <div class="content">
+      <img class="mark" src="/assets/westbeat-logo.png" alt="Westbeat logo">
+      <div>
+        <h2>Westbeat</h2>
+        <p class="tagline">Music &amp; Sound, Built End-to-end.</p>
+      </div>
+      <p class="desc">Original Music Production, Live Sets &amp; Old-school Vinyl Sessions. Driven by a love for creating meaningful, moving experiences through atmospheric textures and dancefloor-ready rhythms — discover Westbeat's original releases and mixes.</p>
+      <span class="enter">Enter Westbeat &rarr;</span>
+    </div>
+  </a>
 
-  <article class="card card-works">
-    <div class="card-glow"></div>
-    <img class="card-logo" src="assets/westworks-logo.png" alt="Westworks logo">
-    <p class="card-tag">Apps & Software, Built End-to-end.</p>
-    <p class="card-desc">
-      Westworks designs and delivers apps and tools, from idea creation
-      to a working, deployed product.
-    </p>
-    <a class="card-cta" href="mailto:westworks@westeffects.com">
-      Get in touch <span aria-hidden="true">→</span>
-    </a>
-  </article>
+  <a class="brand-card card-works" href="/westworks/">
+    <div class="glow"></div>
+    <div class="content">
+      <img class="mark" src="/assets/westworks-logo.png" alt="Westworks logo" onerror="this.style.display='none'">
+      <div>
+        <h2>Westworks</h2>
+        <p class="tagline">Apps &amp; Software, Built End-to-end.</p>
+      </div>
+      <p class="desc">Westworks designs and delivers apps and tools, from idea creation to a working, deployed product — web apps for everyday use, and mobile apps on their way to the App Store and Google Play.</p>
+      <span class="enter">Enter Westworks &rarr;</span>
+    </div>
+  </a>
 
-  <article class="card card-light">
-    <div class="card-glow"></div>
-    <img class="card-logo" src="assets/westlight-logo.png" alt="Westlight logo">
-    <p class="card-tag">Light Photography with Meaningful Connection.</p>
-    <p class="card-desc">
-      Using light as the medium to tell stories and capture intrigue
-      through unique Light Photography.
-    </p>
-    <a class="card-cta" href="mailto:westlight@westeffects.com">
-      Get in touch <span aria-hidden="true">→</span>
-    </a>
-  </article>
+  <a class="brand-card card-light" href="/westlight/">
+    <div class="glow"></div>
+    <div class="content">
+      <img class="mark" src="/assets/westlight-logo.png" alt="Westlight logo" onerror="this.style.display='none'">
+      <div>
+        <h2>Westlight</h2>
+        <p class="tagline">Light Photography with Meaningful Connection.</p>
+      </div>
+      <p class="desc">Using light as the medium to tell stories and capture intrigue. Explore three disciplines — Sparks, Fire and Light Painting — through unique long-exposure photography.</p>
+      <span class="enter">Enter Westlight &rarr;</span>
+    </div>
+  </a>
 
-</main>
+</div>
 
-<footer class="site-footer">
-  <p>&copy; <span id="year"></span> Westeffects. Built by Westworks</p>
+<footer>
+  &copy; Westeffects. Built by <a href="/westworks/">Westworks</a>.
 </footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
 
 </body>
 </html>

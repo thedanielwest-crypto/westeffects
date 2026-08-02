@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WESTBEAT — Original Music Production | Westeffects</title>
+<meta name="description" content="WESTBEAT is the production alias of Daniel West — vinyl DJ and electronic music producer from Brisbane, Australia. Listen to every release.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --bg-raised:#141414;
+    --line:#242424;
+    --text:#f5f3ef;
+    --muted:#8b8b8f;
+    --cyan:#00e5ff;
+    --magenta:#ff2fd6;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%;}
+
+  .noise{
+    position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.035; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  header{
+    position:sticky; top:0; z-index:10;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 6vw;
+    background:rgba(10,10,10,.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .back{
+    font-size:13px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--muted); display:flex; align-items:center; gap:8px;
+    transition:color .2s;
+  }
+  .back:hover{color:var(--text);}
+  .brandmark{font-family:'Anton'; font-size:20px; letter-spacing:.04em;}
+
+  .hero{
+    position:relative;
+    padding:15vh 6vw 10vh;
+    text-align:center;
+    overflow:hidden;
+    background:
+      linear-gradient(180deg, rgba(10,10,10,.55) 0%, rgba(10,10,10,.75) 55%, var(--bg) 96%),
+      url('img/live-set.jpg') center 30%/cover no-repeat;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:-20% -10% auto -10%; height:140%;
+    background:
+      radial-gradient(ellipse 60% 45% at 30% 20%, rgba(0,229,255,.14), transparent 60%),
+      radial-gradient(ellipse 55% 40% at 75% 30%, rgba(255,47,214,.13), transparent 60%);
+    z-index:0;
+  }
+  .hero-credit{
+    position:relative; z-index:2; margin-top:14px;
+    font-size:11px; letter-spacing:.06em; color:rgba(245,243,239,.55);
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .hero img.mark{width:92px; margin:0 auto 28px;}
+  .hero h1{
+    font-family:'Anton';
+    font-size:clamp(48px, 9vw, 118px);
+    letter-spacing:.01em;
+    line-height:.92;
+    text-transform:uppercase;
+    background:linear-gradient(100deg, #fff 30%, var(--cyan) 55%, var(--magenta) 78%, #fff 100%);
+    background-size:220% 100%;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation:sheen 9s ease-in-out infinite;
+  }
+  @keyframes sheen{0%{background-position:0% 0;}50%{background-position:100% 0;}100%{background-position:0% 0;}}
+  .hero p.tag{
+    margin-top:22px; font-size:clamp(15px,2vw,19px); color:var(--muted);
+    max-width:560px; margin-left:auto; margin-right:auto;
+  }
+  .hero .cta-row{
+    margin-top:40px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
+  }
+  .pill{
+    padding:12px 26px; border:1px solid var(--line); border-radius:999px;
+    font-size:13px; letter-spacing:.06em; text-transform:uppercase; font-weight:600;
+    transition:.2s;
+  }
+  .pill:hover{border-color:var(--cyan); box-shadow:0 0 0 1px var(--cyan), 0 0 24px rgba(0,229,255,.25);}
+  .pill.solid{background:var(--text); color:#0a0a0a; border-color:var(--text);}
+  .pill.solid:hover{box-shadow:0 0 24px rgba(255,255,255,.25);}
+
+  .bio{
+    max-width:720px; margin:0 auto; padding:0 6vw 10vh;
+    color:var(--muted); font-size:15px; text-align:center; line-height:1.75;
+  }
+
+  section{padding:6vh 6vw 10vh;}
+  .section-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:36px; flex-wrap:wrap; gap:10px;}
+  .section-head h2{
+    font-family:'Anton'; font-size:clamp(28px,4vw,44px); text-transform:uppercase; letter-spacing:.01em;
+  }
+  .section-head span{color:var(--muted); font-size:13px; letter-spacing:.08em; text-transform:uppercase;}
+
+  .track-grid{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:22px;
+  }
+  .track{
+    background:var(--bg-raised); border:1px solid var(--line); border-radius:10px; overflow:hidden;
+    transition:transform .25s, border-color .25s, box-shadow .25s;
+  }
+  .track:hover{transform:translateY(-4px); border-color:var(--cyan); box-shadow:0 12px 30px rgba(0,229,255,.12);}
+  .thumb-wrap{position:relative; aspect-ratio:16/9; background:#000; overflow:hidden;}
+  .thumb-wrap img{width:100%; height:100%; object-fit:cover; transition:transform .4s;}
+  .track:hover .thumb-wrap img{transform:scale(1.06);}
+  .play{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(0deg, rgba(0,0,0,.55), transparent 55%);
+  }
+  .play svg{width:52px; height:52px; opacity:.9; filter:drop-shadow(0 4px 12px rgba(0,0,0,.5));}
+  .track-info{padding:16px 18px 20px;}
+  .track-info h3{font-size:15px; font-weight:600; margin-bottom:4px;}
+  .track-info p{font-size:12px; color:var(--muted); letter-spacing:.02em;}
+
+  .stream{
+    background:var(--bg-raised); border:1px solid var(--line); border-radius:16px;
+    padding:48px 6vw; text-align:center;
+  }
+  .stream h2{font-family:'Anton'; font-size:clamp(26px,4vw,38px); text-transform:uppercase; margin-bottom:10px;}
+  .stream p{color:var(--muted); font-size:14px; margin-bottom:34px;}
+  .stream-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:16px; max-width:900px; margin:0 auto;
+  }
+  .stream-card{
+    border:1px solid var(--line); border-radius:12px; padding:22px 16px;
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+    transition:.2s;
+  }
+  .stream-card:hover{border-color:var(--magenta); box-shadow:0 0 24px rgba(255,47,214,.18); transform:translateY(-3px);}
+  .stream-card svg{width:28px; height:28px;}
+  .stream-card span{font-size:13px; font-weight:600; letter-spacing:.02em;}
+
+  footer{
+    text-align:center; padding:40px 6vw 60px; color:var(--muted); font-size:12px;
+    border-top:1px solid var(--line);
+  }
+  footer a{border-bottom:1px solid transparent;}
+  footer a:hover{border-color:var(--muted);}
+
+  @media (max-width:560px){
+    header{padding:18px 5vw;}
+    .hero{padding:12vh 5vw 8vh;}
+  }
+</style>
+</head>
+<body>
+<div class="noise"></div>
+
+<header>
+  <a href="/" class="back">&larr; Westeffects</a>
+  <span class="brandmark">WESTBEAT</span>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <img class="mark" src="/assets/westbeat-emblem.png" alt="WESTBEAT emblem">
+    <h1>Westbeat</h1>
+    <p class="tag">Original Music Production, Live Sets &amp; Old&#8209;school Vinyl Sessions.</p>
+    <div class="cta-row">
+      <a class="pill solid" href="https://open.spotify.com/artist/5a6KjIK2V9G9QJYHcWZafc" target="_blank" rel="noopener">Listen on Spotify</a>
+      <a class="pill" href="https://www.youtube.com/channel/UCq9BjDnObSXhd4F6xk1nn5w" target="_blank" rel="noopener">Watch on YouTube</a>
+    </div>
+    <p class="hero-credit">Live at the decks &middot; © Thomas McShane</p>
+  </div>
+</div>
+
+<div class="bio">
+  <p>WESTBEAT is the production alias of Daniel West, a seasoned vinyl DJ and electronic music producer based in Brisbane, Australia. With over 20 years behind the decks, his sound blends chopped loops, FM grit and deep bass into immersive sonic journeys &mdash; running synths, keys, live studio recordings and an arsenal of samples through Ableton Live 12, where classic techniques meet modern precision.</p>
+</div>
+
+<section id="tracks">
+  <div class="section-head">
+    <h2>All Releases</h2>
+    <span>15 tracks · YouTube</span>
+  </div>
+  <div class="track-grid" id="trackGrid"></div>
+</section>
+
+<section id="stream-links">
+  <div class="stream">
+    <h2>Stream &amp; Follow</h2>
+    <p>Four tracks are live across streaming platforms — the rest live on YouTube above.</p>
+    <div class="stream-grid">
+      <a class="stream-card" href="https://open.spotify.com/artist/5a6KjIK2V9G9QJYHcWZafc" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141 4.32-1.32 9.719-.66 13.379 1.621.361.181.54.78.362 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.72-.18-.6.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        <span>Spotify</span>
+      </a>
+      <a class="stream-card" href="https://music.apple.com/us/artist/westbeat/552785212" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="#fff"><path d="M23.997 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043A5.022 5.022 0 0019.5.033a10 10 0 00-1.156-.08H5.65a9.7 9.7 0 00-1.428.111 4.994 4.994 0 00-2.582 1.312A5.023 5.023 0 00.303 3.878a9.09 9.09 0 00-.28 2.006c-.008.109-.017.219-.023.328v11.588c.01.166.018.331.033.497.06.703.184 1.395.5 2.038a5.023 5.023 0 003.017 2.62 8.9 8.9 0 002.324.377c.113.006.226.014.339.021h12.978a8.882 8.882 0 001.4-.108 5.008 5.008 0 002.6-1.297 5.036 5.036 0 001.464-2.734 9.19 9.19 0 00.153-1.313c.008-.113.014-.226.02-.339V6.463c-.005-.113-.008-.226-.011-.339zm-6.549 4.203c-.045.436-.156.859-.396 1.234-.298.465-.719.751-1.24.868a1.96 1.96 0 01-.475.05 1.63 1.63 0 01-1.653-1.457 1.735 1.735 0 011.017-1.79c.297-.139.61-.203.928-.264l1.03-.196c.135-.026.161-.076.161-.207-.001-1.08 0-2.16-.002-3.24a.42.42 0 00-.014-.109c-.024-.089-.083-.128-.176-.11l-.443.087-4.85.978c-.03.006-.06.012-.089.021-.108.033-.147.08-.156.192a1.32 1.32 0 00-.005.146v7.129c0 .316-.024.63-.107.937a1.994 1.994 0 01-1.397 1.42 2.42 2.42 0 01-.926.089 1.716 1.716 0 01-1.598-1.407 1.734 1.734 0 011.056-1.87c.29-.13.596-.19.906-.249l1.062-.202c.15-.03.176-.076.176-.226V4.947c0-.156.05-.28.202-.343a.87.87 0 01.223-.058l6.29-1.268.61-.123a.53.53 0 01.623.417c.014.06.02.123.02.185v6.57z"/></svg>
+        <span>Apple Music</span>
+      </a>
+      <a class="stream-card" href="https://soundcloud.com/westbeat-sc" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="#ff5500"><path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154.233 2.105c.007.058.05.098.101.098.05 0 .09-.04.099-.098l.255-2.105-.27-2.154c0-.057-.045-.1-.084-.1zm-1.005.83c-.06 0-.09.04-.099.09l-.17 1.325.17 1.28c.005.05.04.09.095.09s.095-.04.1-.09l.19-1.28-.19-1.325c-.005-.055-.045-.09-.096-.09zM3.24 10.06c-.06 0-.11.05-.11.11l-.24 4.14.24 3.97c0 .06.05.11.11.11.055 0 .1-.05.11-.11l.27-3.97-.27-4.14c-.01-.06-.055-.11-.11-.11zm1.075-.9c-.065 0-.12.055-.125.12l-.215 5.02.215 4.86c.005.065.06.12.125.12.06 0 .11-.055.115-.12l.245-4.86-.245-5.02c-.005-.065-.055-.12-.115-.12zm1.12-.32c-.075 0-.135.06-.14.135l-.195 5.24.195 4.995c.005.075.065.135.14.135.07 0 .13-.06.135-.135l.22-4.995-.22-5.24c-.005-.075-.065-.135-.135-.135zm1.31-.61c-.08 0-.145.065-.15.145l-.17 5.85.17 5.02c.005.08.07.145.15.145.075 0 .14-.065.145-.145l.19-5.02-.19-5.85c-.005-.08-.07-.145-.145-.145zm1.575-.35c-.09 0-.16.07-.165.16l-.135 6.2.135 5.06c.005.09.075.16.165.16.085 0 .155-.07.16-.16l.155-5.06-.155-6.2c-.005-.09-.075-.16-.16-.16zm1.575-1.135c-.005 0-.005 0 0 0-.1 0-.18.08-.185.18l-.11 7.32.11 5.09c.005.1.085.18.185.18.095 0 .175-.08.18-.18l.125-5.09-.125-7.32c-.005-.1-.085-.18-.18-.18zm1.665.03c-.105 0-.19.085-.195.19l-.095 7.28.095 5.115c.005.105.09.19.195.19.1 0 .185-.085.19-.19l.11-5.115-.11-7.28c-.005-.105-.09-.19-.19-.19zM24 15.885c0-1.99-1.615-3.605-3.605-3.605-.375 0-.735.06-1.075.165-.22-2.48-2.305-4.425-4.845-4.425-.625 0-1.225.12-1.775.335-.21.08-.265.165-.265.325v10.9c0 .17.135.31.3.325.01 0 6.965.005 7.66.005 1.99 0 3.605-1.615 3.605-3.61z"/></svg>
+        <span>SoundCloud</span>
+      </a>
+      <a class="stream-card" href="https://www.youtube.com/channel/UCq9BjDnObSXhd4F6xk1nn5w" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        <span>YouTube</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; Westeffects &middot; <a href="mailto:westbeat@westeffects.com">westbeat@westeffects.com</a> &middot; <a href="/">Back to Westeffects</a>
+</footer>
+
+<script>
+  const tracks = [
+    {t:"Rattlin Bones Remix", id:"Dpo0kNrau_4"},
+    {t:"Hold Me, Touch Me, Love Me. feat. The Soul Patchwork Assembly", id:"LbVq-XyKvYc"},
+    {t:"Dynamic Me Time Radio Edit", id:"4kYyY1t7k84"},
+    {t:"Dynamic Me Time", id:"8NvxY5OrYR0"},
+    {t:"Running With Scissors", id:"CcXhav2uwrs"},
+    {t:"Dangerous Friend", id:"uEY5Pba6KpY"},
+    {t:"NIN Remix", id:"u3RGkSMox-8"},
+    {t:"Mix One of One", id:"4SW2ZgAfYdM"},
+    {t:"WESTBEAT Mix Session One", id:"VkwYzGyesQo"},
+    {t:"Streetwise Philosophy 101 (Skipping School Edit)", id:"_OhqLDvJl_M"},
+    {t:"Streetwise Philosophy", id:"Dahv3SPczKo"},
+    {t:"City Night Safari", id:"FU1nrF82zl4"},
+    {t:"Wendy Knows How", id:"JYsI0Rg2P-U"},
+    {t:"Trance Look", id:"PhKrFLzXzLE"},
+    {t:"Trance Mountain by WESTBEAT", id:"DT7J2Pi8-xg"}
+  ];
+  const grid = document.getElementById('trackGrid');
+  grid.innerHTML = tracks.map(tr => `
+    <a class="track" href="https://www.youtube.com/watch?v=${tr.id}" target="_blank" rel="noopener">
+      <div class="thumb-wrap">
+        <img loading="lazy" src="https://img.youtube.com/vi/${tr.id}/hqdefault.jpg" alt="${tr.t}">
+        <div class="play"><svg viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,.35)"/><path d="M10 8l6 4-6 4V8z" fill="white"/></svg></div>
+      </div>
+      <div class="track-info"><h3>${tr.t}</h3><p>Watch on YouTube</p></div>
+    </a>
+  `).join('');
+</script>
+</body>
+</html>
