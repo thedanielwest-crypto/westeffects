@@ -22,6 +22,8 @@
     </div>
   </nav>
 
+  <p class="notice" id="thanks" role="status" hidden>Thank you! Your print order is in. A receipt is on its way to your email.</p>
+
   <header class="page-head">
     <span class="kicker" style="color:var(--amber)">Westlight · Brisbane, Australia</span>
     <h1 class="disp" style="color:var(--amber);text-shadow:0 0 50px rgba(255,179,71,.45)">WESTLIGHT</h1>
@@ -32,40 +34,44 @@
   <section class="cat" id="sparks" aria-labelledby="h-sparks">
     <div class="cat-head"><h2 class="disp" id="h-sparks" style="color:var(--amber)">Sparks</h2><p>Spun steel wool, caught mid-shower: orbs, fountains and embers frozen in a single frame.</p></div>
     <div class="tiles">
-      <button class="tile" type="button" data-full="/westlight/full/sparks-01.jpg" data-title="Sparks 01" data-credit="Thomas McShane" aria-label="Enlarge Sparks 01"><img src="/westlight/thumb/sparks-01.jpg" alt="Sparks 01, photo by Thomas McShane" loading="lazy"><span class="ov">Sparks 01 · © Thomas McShane</span></button>
-      <button class="tile" type="button" data-full="/westlight/full/sparks-02.jpg" data-title="Sparks 02" data-credit="Thomas McShane" aria-label="Enlarge Sparks 02"><img src="/westlight/thumb/sparks-02.jpg" alt="Sparks 02, photo by Thomas McShane" loading="lazy"><span class="ov">Sparks 02 · © Thomas McShane</span></button>
-      <button class="tile" type="button" data-full="/westlight/full/sparks-03.jpg" data-title="Sparkles in My Coffee" data-credit="Thomas McShane" aria-label="Enlarge Sparkles in My Coffee"><img src="/westlight/thumb/sparks-03.jpg" alt="Sparkles in My Coffee, photo by Thomas McShane" loading="lazy"><span class="ov">Sparkles in My Coffee · © Thomas McShane</span></button>
-      <button class="tile" type="button" data-full="/westlight/full/sparks-04.jpg" data-title="Embers in The Sky" data-credit="Craig English Photography" aria-label="Enlarge Embers in The Sky"><img src="/westlight/thumb/sparks-04.jpg" alt="Embers in The Sky, photo by Craig English Photography" loading="lazy"><span class="ov">Embers in The Sky · © Craig English Photography</span></button>
-      <button class="tile" type="button" data-full="/westlight/full/sparks-05.jpg" data-title="Floating Orb" data-credit="Craig English Photography" aria-label="Enlarge Floating Orb"><img src="/westlight/thumb/sparks-05.jpg" alt="Floating Orb, photo by Craig English Photography" loading="lazy"><span class="ov">Floating Orb · © Craig English Photography</span></button>
-      <button class="tile" type="button" data-full="/westlight/full/sparks-06.jpg" data-title="Sparks 06" data-credit="Craig English Photography" aria-label="Enlarge Sparks 06"><img src="/westlight/thumb/sparks-06.jpg" alt="Sparks 06, photo by Craig English Photography" loading="lazy"><span class="ov">Sparks 06 · © Craig English Photography</span></button>
-      <button class="tile" type="button" data-full="/westlight/full/sparks-07.jpg" data-title="Sparks 07" data-credit="Thomas McShane" aria-label="Enlarge Sparks 07"><img src="/westlight/thumb/sparks-07.jpg" alt="Sparks 07, photo by Thomas McShane" loading="lazy"><span class="ov">Sparks 07 · © Thomas McShane</span></button>
-      <button class="tile" type="button" data-full="/westlight/full/sparks-08.jpg" data-title="Life&#39;s a Hell Ride" data-credit="Craig English Photography" aria-label="Enlarge Life&#39;s a Hell Ride"><img src="/westlight/thumb/sparks-08.jpg" alt="Life&#39;s a Hell Ride, photo by Craig English Photography" loading="lazy"><span class="ov">Life&#39;s a Hell Ride · © Craig English Photography</span></button>
+      <button class="tile" type="button" data-id="sparks-01" data-full="/westlight/full/sparks-01.jpg" data-title="Sparks 01" data-credit="Thomas McShane" aria-label="Enlarge Sparks 01"><img src="/westlight/thumb/sparks-01.jpg" alt="Sparks 01, photo by Thomas McShane" loading="lazy"><span class="ov">Sparks 01 · © Thomas McShane</span></button>
+      <button class="tile" type="button" data-id="sparks-02" data-full="/westlight/full/sparks-02.jpg" data-title="Sparks 02" data-credit="Thomas McShane" aria-label="Enlarge Sparks 02"><img src="/westlight/thumb/sparks-02.jpg" alt="Sparks 02, photo by Thomas McShane" loading="lazy"><span class="ov">Sparks 02 · © Thomas McShane</span></button>
+      <button class="tile" type="button" data-id="sparks-03" data-full="/westlight/full/sparks-03.jpg" data-title="Sparkles in My Coffee" data-credit="Thomas McShane" aria-label="Enlarge Sparkles in My Coffee"><img src="/westlight/thumb/sparks-03.jpg" alt="Sparkles in My Coffee, photo by Thomas McShane" loading="lazy"><span class="ov">Sparkles in My Coffee · © Thomas McShane</span></button>
+      <button class="tile" type="button" data-id="sparks-04" data-full="/westlight/full/sparks-04.jpg" data-title="Embers in The Sky" data-credit="Craig English Photography" aria-label="Enlarge Embers in The Sky"><img src="/westlight/thumb/sparks-04.jpg" alt="Embers in The Sky, photo by Craig English Photography" loading="lazy"><span class="ov">Embers in The Sky · © Craig English Photography</span></button>
+      <button class="tile" type="button" data-id="sparks-05" data-full="/westlight/full/sparks-05.jpg" data-title="Floating Orb" data-credit="Craig English Photography" aria-label="Enlarge Floating Orb"><img src="/westlight/thumb/sparks-05.jpg" alt="Floating Orb, photo by Craig English Photography" loading="lazy"><span class="ov">Floating Orb · © Craig English Photography</span></button>
+      <button class="tile" type="button" data-id="sparks-06" data-full="/westlight/full/sparks-06.jpg" data-title="Sparks 06" data-credit="Craig English Photography" aria-label="Enlarge Sparks 06"><img src="/westlight/thumb/sparks-06.jpg" alt="Sparks 06, photo by Craig English Photography" loading="lazy"><span class="ov">Sparks 06 · © Craig English Photography</span></button>
+      <button class="tile" type="button" data-id="sparks-07" data-full="/westlight/full/sparks-07.jpg" data-title="Sparks 07" data-credit="Thomas McShane" aria-label="Enlarge Sparks 07"><img src="/westlight/thumb/sparks-07.jpg" alt="Sparks 07, photo by Thomas McShane" loading="lazy"><span class="ov">Sparks 07 · © Thomas McShane</span></button>
+      <button class="tile" type="button" data-id="sparks-08" data-full="/westlight/full/sparks-08.jpg" data-title="Life&#39;s a Hell Ride" data-credit="Craig English Photography" aria-label="Enlarge Life&#39;s a Hell Ride"><img src="/westlight/thumb/sparks-08.jpg" alt="Life&#39;s a Hell Ride, photo by Craig English Photography" loading="lazy"><span class="ov">Life&#39;s a Hell Ride · © Craig English Photography</span></button>
     </div>
   </section>
   <section class="cat" id="fire" aria-labelledby="h-fire">
     <div class="cat-head"><h2 class="disp" id="h-fire" style="color:var(--ember)">Fire</h2><p>Live flame on poi and staff, traced through the dark in loops and arcs.</p></div>
     <div class="tiles">
-      <button class="tile" type="button" data-full="/westlight/full/fire-01.jpg" data-title="Fire 01" data-credit="Thomas McShane" aria-label="Enlarge Fire 01"><img src="/westlight/thumb/fire-01.jpg" alt="Fire 01, photo by Thomas McShane" loading="lazy"><span class="ov">Fire 01 · © Thomas McShane</span></button>
-      <button class="tile" type="button" data-full="/westlight/full/fire-02.jpg" data-title="Lyre on Fyre" data-credit="Craig English Photography" aria-label="Enlarge Lyre on Fyre"><img src="/westlight/thumb/fire-02.jpg" alt="Lyre on Fyre, photo by Craig English Photography" loading="lazy"><span class="ov">Lyre on Fyre · © Craig English Photography</span></button>
-      <button class="tile" type="button" data-full="/westlight/full/fire-03.jpg" data-title="Pineapple Fireball" data-credit="Craig English Photography" aria-label="Enlarge Pineapple Fireball"><img src="/westlight/thumb/fire-03.jpg" alt="Pineapple Fireball, photo by Craig English Photography" loading="lazy"><span class="ov">Pineapple Fireball · © Craig English Photography</span></button>
+      <button class="tile" type="button" data-id="fire-01" data-full="/westlight/full/fire-01.jpg" data-title="Fire 01" data-credit="Thomas McShane" aria-label="Enlarge Fire 01"><img src="/westlight/thumb/fire-01.jpg" alt="Fire 01, photo by Thomas McShane" loading="lazy"><span class="ov">Fire 01 · © Thomas McShane</span></button>
+      <button class="tile" type="button" data-id="fire-02" data-full="/westlight/full/fire-02.jpg" data-title="Lyre on Fyre" data-credit="Craig English Photography" aria-label="Enlarge Lyre on Fyre"><img src="/westlight/thumb/fire-02.jpg" alt="Lyre on Fyre, photo by Craig English Photography" loading="lazy"><span class="ov">Lyre on Fyre · © Craig English Photography</span></button>
+      <button class="tile" type="button" data-id="fire-03" data-full="/westlight/full/fire-03.jpg" data-title="Pineapple Fireball" data-credit="Craig English Photography" aria-label="Enlarge Pineapple Fireball"><img src="/westlight/thumb/fire-03.jpg" alt="Pineapple Fireball, photo by Craig English Photography" loading="lazy"><span class="ov">Pineapple Fireball · © Craig English Photography</span></button>
     </div>
   </section>
   <section class="cat" id="light-painting" aria-labelledby="h-light-painting">
     <div class="cat-head"><h2 class="disp" id="h-light-painting" style="color:var(--cyan)">Light Painting</h2><p>Colour drawn through space with LED and long exposure, where the photographer becomes the brush.</p></div>
     <div class="tiles">
-      <button class="tile" type="button" data-full="/westlight/full/lp-01.jpg" data-title="Light Painting 01" data-credit="Thomas McShane" aria-label="Enlarge Light Painting 01"><img src="/westlight/thumb/lp-01.jpg" alt="Light Painting 01, photo by Thomas McShane" loading="lazy"><span class="ov">Light Painting 01 · © Thomas McShane</span></button>
-      <button class="tile" type="button" data-full="/westlight/full/lp-02.jpg" data-title="Light Painting 02" data-credit="Thomas McShane" aria-label="Enlarge Light Painting 02"><img src="/westlight/thumb/lp-02.jpg" alt="Light Painting 02, photo by Thomas McShane" loading="lazy"><span class="ov">Light Painting 02 · © Thomas McShane</span></button>
-      <button class="tile" type="button" data-full="/westlight/full/lp-03.jpg" data-title="Light Painting 03" data-credit="Thomas McShane" aria-label="Enlarge Light Painting 03"><img src="/westlight/thumb/lp-03.jpg" alt="Light Painting 03, photo by Thomas McShane" loading="lazy"><span class="ov">Light Painting 03 · © Thomas McShane</span></button>
-      <button class="tile" type="button" data-full="/westlight/full/lp-04.jpg" data-title="Spinning Through The Universe" data-credit="Thomas McShane" aria-label="Enlarge Spinning Through The Universe"><img src="/westlight/thumb/lp-04.jpg" alt="Spinning Through The Universe, photo by Thomas McShane" loading="lazy"><span class="ov">Spinning Through The Universe · © Thomas McShane</span></button>
+      <button class="tile" type="button" data-id="lp-01" data-full="/westlight/full/lp-01.jpg" data-title="Light Painting 01" data-credit="Thomas McShane" aria-label="Enlarge Light Painting 01"><img src="/westlight/thumb/lp-01.jpg" alt="Light Painting 01, photo by Thomas McShane" loading="lazy"><span class="ov">Light Painting 01 · © Thomas McShane</span></button>
+      <button class="tile" type="button" data-id="lp-02" data-full="/westlight/full/lp-02.jpg" data-title="Light Painting 02" data-credit="Thomas McShane" aria-label="Enlarge Light Painting 02"><img src="/westlight/thumb/lp-02.jpg" alt="Light Painting 02, photo by Thomas McShane" loading="lazy"><span class="ov">Light Painting 02 · © Thomas McShane</span></button>
+      <button class="tile" type="button" data-id="lp-03" data-full="/westlight/full/lp-03.jpg" data-title="Light Painting 03" data-credit="Thomas McShane" aria-label="Enlarge Light Painting 03"><img src="/westlight/thumb/lp-03.jpg" alt="Light Painting 03, photo by Thomas McShane" loading="lazy"><span class="ov">Light Painting 03 · © Thomas McShane</span></button>
+      <button class="tile" type="button" data-id="lp-04" data-full="/westlight/full/lp-04.jpg" data-title="Spinning Through The Universe" data-credit="Thomas McShane" aria-label="Enlarge Spinning Through The Universe"><img src="/westlight/thumb/lp-04.jpg" alt="Spinning Through The Universe, photo by Thomas McShane" loading="lazy"><span class="ov">Spinning Through The Universe · © Thomas McShane</span></button>
     </div>
   </section>
 </div>
+
+<section class="band" id="printsLive" hidden style="background:rgba(255,179,71,.08)">
+  <div class="wrap"><div class="txt"><span class="kicker" style="color:var(--amber)">Prints available</span><h2 class="disp">Hang the light on your wall.</h2><p>Open any photo and choose "Buy this print". Australian shipping. Paid securely through Stripe.</p></div></div>
+</section>
 
 <section class="band" id="prints" aria-labelledby="pr-h" style="background:rgba(255,179,71,.08)">
   <div class="wrap">
     <div class="txt"><span class="kicker" style="color:var(--amber)">Prints coming soon</span><h2 class="disp" id="pr-h">Hang the light on your wall.</h2><p>Limited-edition prints from the gallery are on the way. Join the list and hear first.</p></div>
     <div class="side">
-      <form class="cap" name="print-list" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" data-success="You are on the print list. We will be in touch.">
+      <form class="cap" name="print-list" method="POST" data-success="You are on the print list. We will be in touch.">
         <input type="hidden" name="form-name" value="print-list">
         <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
         <div class="frow"><label class="sr" for="e3">Email address</label><input class="field" id="e3" name="email" type="email" required placeholder="you@email.com" autocomplete="email"><button class="btn" type="submit">Join the list</button></div>
@@ -83,6 +89,13 @@
   <img id="lbImg" src="" alt="">
   <button class="n" type="button" aria-label="Next photo">&#8250;</button>
   <div class="c" id="lbCap"></div>
+  <div class="buy" id="lbBuy" hidden>
+    <label class="sr" for="lbSize">Print size</label>
+    <select class="field" id="lbSize"></select>
+    <span id="lbShip"></span>
+    <button class="btn sm" id="lbGo" type="button">Buy this print</button>
+    <span class="bm" id="lbBuyMsg" role="status" aria-live="polite"></span>
+  </div>
 </div>
 <script src="/assets/site.js" defer></script>
 </body>
