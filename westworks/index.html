@@ -3,270 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WESTWORKS — Apps &amp; Software, Built End-to-end | Westeffects</title>
-<meta name="description" content="Westworks designs and delivers apps and tools, from idea to a working, deployed product.">
+<title>Westworks — Apps and Software, Built End-to-end | Westeffects</title>
+<meta name="description" content="Westworks designs and delivers apps and tools, from idea to a working, deployed product. Free web apps, store releases coming, and custom builds.">
+<link rel="icon" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0a0a0a;
-    --bg-raised:#141414;
-    --line:#242424;
-    --text:#f5f3ef;
-    --muted:#8b8b8f;
-    --orange:#ff5a1f;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  body{background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; line-height:1.5;}
-  a{color:inherit; text-decoration:none;}
-  img{display:block; max-width:100%;}
-  h1,h2,h3{font-family:'Space Grotesk';}
-
-  header{
-    position:sticky; top:0; z-index:10;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:22px 6vw;
-    background:rgba(10,10,10,.85);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .back{font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); transition:color .2s;}
-  .back:hover{color:var(--text);}
-  .contact-pill{font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); padding:8px 16px; border:1px solid var(--line); border-radius:999px; transition:.2s;}
-  .contact-pill:hover{border-color:var(--orange); color:var(--text);}
-  .brandmark{font-family:'Space Grotesk'; font-weight:700; font-size:19px; letter-spacing:.02em;}
-  .brandmark span{color:var(--orange);}
-
-  .hero{padding:14vh 6vw 8vh; position:relative; overflow:hidden;}
-  .hero::before{
-    content:""; position:absolute; inset:-30% -10% auto -10%; height:150%;
-    background:radial-gradient(ellipse 50% 40% at 25% 30%, rgba(255,90,31,.16), transparent 65%);
-    z-index:0;
-  }
-  .hero-inner{position:relative; z-index:1; max-width:820px;}
-  .eyebrow{
-    font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--orange); font-weight:700;
-    margin-bottom:18px; display:flex; align-items:center; gap:10px;
-  }
-  .eyebrow::before{content:""; width:26px; height:1px; background:var(--orange);}
-  .hero h1{
-    font-size:clamp(40px,6.5vw,76px); font-weight:700; line-height:1.02; letter-spacing:-.01em;
-  }
-  .hero p.tag{margin-top:22px; font-size:clamp(15px,1.8vw,18px); color:var(--muted); max-width:560px;}
-
-  section{padding:8vh 6vw;}
-  .section-head{margin-bottom:8px;}
-  .section-head .num{font-size:13px; color:var(--orange); font-weight:700; letter-spacing:.08em;}
-  .section-head h2{font-size:clamp(26px,4vw,38px); font-weight:700; margin-top:8px;}
-  .section-head p{color:var(--muted); font-size:14px; margin-top:10px; max-width:520px;}
-
-  .app-grid{
-    margin-top:40px;
-    display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:24px;
-  }
-  .app-card{
-    background:var(--bg-raised); border:1px solid var(--line); border-radius:14px; overflow:hidden;
-    display:flex; flex-direction:column;
-    transition:transform .25s, border-color .25s, box-shadow .25s;
-  }
-  .app-card:hover{transform:translateY(-5px); border-color:var(--orange); box-shadow:0 16px 34px rgba(255,90,31,.15);}
-  .app-shot{
-    aspect-ratio:4/3; background:linear-gradient(135deg,#1a1a1a,#0d0d0d);
-    display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;
-  }
-  .app-shot img{width:100%; height:100%; object-fit:contain; object-position:center;}
-  .app-shot .placeholder{
-    color:#4a4a4a; font-size:12px; text-align:center; padding:20px; letter-spacing:.05em; text-transform:uppercase;
-  }
-  .app-body{padding:20px 22px 24px; display:flex; flex-direction:column; gap:10px; flex:1;}
-  .app-body h3{font-size:17px; font-weight:700;}
-  .app-body p{font-size:13px; color:var(--muted); flex:1;}
-  .app-link{
-    margin-top:8px; align-self:flex-start;
-    font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
-    padding:9px 18px; border:1px solid var(--line); border-radius:999px; transition:.2s;
-  }
-  .app-link:hover{border-color:var(--orange); background:var(--orange); color:#0a0a0a;}
-
-  .badge{
-    display:inline-block; font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
-    padding:4px 10px; border-radius:999px; background:rgba(255,90,31,.12); color:var(--orange);
-    border:1px solid rgba(255,90,31,.35); margin-bottom:8px; width:fit-content;
-  }
-
-  .store-badges{display:flex; gap:10px; margin-top:6px; flex-wrap:wrap;}
-  .store-badges span{
-    font-size:11px; color:var(--muted); border:1px solid var(--line); padding:6px 12px; border-radius:8px;
-  }
-
-  .divider{border-top:1px solid var(--line); margin:0 6vw;}
-
-  footer{text-align:center; padding:40px 6vw 60px; color:var(--muted); font-size:12px; border-top:1px solid var(--line);}
-  footer a{border-bottom:1px solid transparent;}
-  footer a:hover{border-color:var(--muted);}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
+<div class="wrap">
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="/"><img src="/assets/emblem-256.png" alt="Westeffects compass emblem" width="44" height="44"><span>WESTEFFECTS</span></a>
+    <div class="menu">
+      <a href="/westworks/" aria-current="page">Apps</a><a href="/westbeat/">Music</a><a href="/westlight/">Light</a>
+      <a class="cta" href="#build">Build me an app</a>
+    </div>
+  </nav>
 
-<header>
-  <a href="/" class="back">&larr; Westeffects</a>
-  <a href="mailto:westworks@westeffects.com" class="contact-pill">&#9993; Get in Touch</a>
-  <span class="brandmark">WEST<span>WORKS</span></span>
-</header>
+  <header class="page-head">
+    <span class="kicker">Westworks</span>
+    <h1 class="disp">The app arcade.</h1>
+    <p>Pick a cabinet. Free web apps are ready to play, and two store apps are warming up.</p>
+  </header>
 
-<div class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow">Software Studio</div>
-    <h1>Apps &amp; Software,<br>Built End&#8209;to&#8209;end.</h1>
-    <p class="tag">Westworks designs and delivers apps and tools, from idea creation to a working, deployed product &mdash; for market operators, tradies, retailers and entrepreneurs who need a real product, not a prototype.</p>
-  </div>
+  <section class="block" id="apps-for-the-people" aria-labelledby="free-h">
+    <h2 class="disp" id="free-h">Apps for the people <span style="color:var(--cyan)">· free</span></h2>
+    <div class="grid">
+      <!-- To add a real screenshot: replace the <div class="scr">…</div> with <img src="/assets/shots/NAME.jpg" alt="NAME screenshot"> -->
+      <article class="glass app" style="--c:#22E4FF"><div class="shot"><div class="scr"><i></i><i></i><i></i></div></div><div class="body"><h3 class="disp">West Algorithm</h3><p>"Do I stay or do I go?" A tongue-in-cheek decision-maker, built to help a mate weigh up whether to stay.</p><a class="btn ghost sm go" href="https://westygorithm.netlify.app" target="_blank" rel="noopener">Play free →</a></div></article>
+      <article class="glass app" style="--c:#FF3DCB"><div class="shot"><div class="scr"><i></i><i></i><i></i></div></div><div class="body"><h3 class="disp">Clean Quote Now</h3><p>A fast, no-fuss quoting tool for cleaning businesses.</p><a class="btn ghost sm go" href="https://cleanquotenow.netlify.app" target="_blank" rel="noopener">Play free →</a></div></article>
+      <article class="glass app" style="--c:#B6FF5C"><div class="shot"><div class="scr"><i></i><i></i><i></i></div></div><div class="body"><h3 class="disp">Green Quote Now</h3><p>The lawn and garden counterpart: instant quoting for green-space businesses.</p><a class="btn ghost sm go" href="https://greenquote.netlify.app" target="_blank" rel="noopener">Play free →</a></div></article>
+      <article class="glass app" style="--c:#FFB347"><div class="shot"><div class="scr"><i></i><i></i><i></i></div></div><div class="body"><h3 class="disp">Pathfinder Planner</h3><p>A planning tool to map routes, steps and journeys. Clarity over complexity.</p><a class="btn ghost sm go" href="https://pathfinderplanner.netlify.app" target="_blank" rel="noopener">Play free →</a></div></article>
+    </div>
+  </section>
+
+  <section class="block" id="apps-in-review" aria-labelledby="store-h">
+    <h2 class="disp" id="store-h">Heading to the stores <span style="color:var(--magenta)">· soon</span></h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))">
+      <article class="glass store" style="--c:#FF3DCB"><div class="glyph" style="--c:#FF3DCB">↑</div><div class="info"><span class="badges"><span>Awaiting release</span></span><h3 class="disp" style="font-size:26px">Upgrade</h3><p style="color:var(--muted)">An app for capturing and developing upgrade ideas, in preview ahead of its store launch.</p><div class="badges"><span>Google Play · soon</span><span>App Store · soon</span></div><a class="btn sm go" href="https://appgradeappideas.netlify.app" target="_blank" rel="noopener" style="align-self:flex-start">Preview web version</a></div></article>
+      <article class="glass store" style="--c:#22E4FF"><div class="glyph" style="--c:#22E4FF">≈</div><div class="info"><span class="badges"><span>Awaiting release</span></span><h3 class="disp" style="font-size:26px">Stock Correlations</h3><p style="color:var(--muted)">See how ASX stocks move with the weather. In preview ahead of its store launch.</p><div class="badges"><span>Google Play · soon</span><span>App Store · soon</span></div><a class="btn sm go" href="https://stockcorrelation.netlify.app" target="_blank" rel="noopener" style="align-self:flex-start">Preview web version</a></div></article>
+    </div>
+  </section>
 </div>
 
-<section id="apps-for-the-people">
-  <div class="section-head">
-    <div class="num">Web Apps</div>
-    <h2>Apps for the People</h2>
-    <p>Free, browser-based tools built for everyday use — no install required.</p>
-  </div>
-  <div class="app-grid">
-
-    <div class="app-card">
-      <div class="app-shot"><img src="assets/Stay%20or%20Go.png" alt="Do I Stay or Do I Go? life-decision tool screenshot"></div>
-      <div class="app-body">
-        <h3>West Algorithm</h3>
-        <p>"Do I Stay or Do I Go?" — a tongue-in-cheek life-decision tool, built to help a mate (Andy) weigh up whether to stay.</p>
-        <a class="app-link" href="https://westygorithm.netlify.app" target="_blank" rel="noopener">Try it →</a>
-      </div>
+<section class="band" id="notify" aria-labelledby="notify-h">
+  <div class="wrap">
+    <div class="txt"><h2 class="disp" id="notify-h">Get the store launch first.</h2><p>One email when Upgrade and Stock Correlations go live on Google Play and the App Store.</p></div>
+    <div class="side">
+      <form class="cap" name="store-launch" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" data-success="You are on the list. We will email you at launch.">
+        <input type="hidden" name="form-name" value="store-launch">
+        <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+        <div class="frow"><label class="sr" for="e2">Email address</label><input class="field" id="e2" name="email" type="email" required placeholder="you@email.com" autocomplete="email"><button class="btn" type="submit">Notify me</button></div>
+        <p class="msg" role="status" aria-live="polite"></p>
+      </form>
     </div>
-
-    <div class="app-card">
-      <div class="app-shot"><img src="assets/Clean%20Quote.png" alt="Clean Quote Now quoting tool screenshot"></div>
-      <div class="app-body">
-        <h3>Clean Quote Now</h3>
-        <p>A fast, no-fuss quoting tool for cleaning businesses to generate professional quotes on the spot.</p>
-        <a class="app-link" href="https://cleanquotenow.netlify.app" target="_blank" rel="noopener">Try it →</a>
-      </div>
-    </div>
-
-    <div class="app-card">
-      <div class="app-shot"><img src="assets/Green%20Quote.png" alt="Green Quote Now quoting tool screenshot"></div>
-      <div class="app-body">
-        <h3>Green Quote Now</h3>
-        <p>The lawn &amp; garden counterpart to Clean Quote Now — instant quoting for green-space businesses.</p>
-        <a class="app-link" href="https://greenquote.netlify.app" target="_blank" rel="noopener">Try it →</a>
-      </div>
-    </div>
-
-    <div class="app-card">
-      <div class="app-shot"><img src="assets/Pathway.png" alt="Pathfinder Planner journey mapping tool screenshot"></div>
-      <div class="app-body">
-        <h3>Pathfinder Planner</h3>
-        <p>A planning tool to help map out routes, steps or journeys — built for clarity over complexity.</p>
-        <a class="app-link" href="https://pathfinderplanner.netlify.app" target="_blank" rel="noopener">Try it →</a>
-      </div>
-    </div>
-
-    <div class="app-card">
-      <div class="app-shot"><img src="assets/Snap%20Handover.jpg" alt="Snap Handover shift handover app screenshot"></div>
-      <div class="app-body">
-        <h3>Snap Handover</h3>
-        <p>A photo-first shift handover tool for disability support teams, with AI item recognition and a manager dashboard.</p>
-        <a class="app-link" href="https://snaphandover.netlify.app/" target="_blank" rel="noopener">Try it →</a>
-      </div>
-    </div>
-
-    <div class="app-card">
-      <div class="app-shot"><img src="assets/Pull%20Up%20A%20Stool.jpg" alt="Pull Up A Stool health logging app screenshot"></div>
-      <div class="app-body">
-        <h3>Pull Up A Stool</h3>
-        <p>A five-second health logger, built to make quick, judgment-free tracking genuinely effortless.</p>
-        <a class="app-link" href="https://pull-up-a-stool.netlify.app/" target="_blank" rel="noopener">Try it →</a>
-      </div>
-    </div>
-
-    <div class="app-card">
-      <div class="app-shot"><img src="assets/HITC%20Find%20Your%20Way.jpg" alt="HITC Find Your Way guidance tool screenshot"></div>
-      <div class="app-body">
-        <h3>HITC Find Your Way</h3>
-        <p>A gentle, five-question guide that points parents and carers toward the right next step — built for Hole in the Clouds.</p>
-        <a class="app-link" href="https://hitc-find-your-way.netlify.app/" target="_blank" rel="noopener">Try it →</a>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<div class="divider"></div>
-
-<section id="apps-in-review">
-  <div class="section-head">
-    <div class="num">Mobile Apps</div>
-    <h2>Apps for Play Store &amp; Apple Store</h2>
-    <p>Two apps currently in build, ahead of their store release.</p>
-  </div>
-  <div class="app-grid">
-
-    <div class="app-card">
-      <div class="app-shot"><img src="assets/AppGrade_Social_Advertising_Post_1080x1080.png" alt="AppGrade app advertisement graphic"></div>
-      <div class="app-body">
-        <span class="badge">Awaiting Release</span>
-        <h3>Upgrade</h3>
-        <p>An app for capturing and developing upgrade ideas — currently in preview ahead of a store launch.</p>
-        <div class="store-badges"><span>Google Play — coming soon</span><span>App Store — coming soon</span></div>
-        <a class="app-link" href="https://appgradeappideas.netlify.app" target="_blank" rel="noopener">Preview →</a>
-      </div>
+<div class="wrap">
+  <section class="block" id="build" aria-labelledby="build-h">
+    <div class="glass panel" style="align-items:flex-start">
+      <div class="txt"><span class="kicker">Custom builds</span><h2 class="disp" id="build-h">Want an app built for your business?</h2><p>Westworks designs and delivers apps and tools from idea to a working, deployed product. Tell us what you have in mind and we will come back with a plan and a quote.</p></div>
+      <form class="cap" name="project-enquiry" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" data-success="Thanks. We will be in touch about your project." style="flex:1 1 420px;min-width:0">
+        <input type="hidden" name="form-name" value="project-enquiry">
+        <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+        <div class="frow"><label class="sr" for="pn">Your name</label><input class="field" id="pn" name="name" required placeholder="Your name" autocomplete="name"><label class="sr" for="pe">Email address</label><input class="field" id="pe" name="email" type="email" required placeholder="you@email.com" autocomplete="email"></div>
+        <label class="sr" for="pi">What do you want built?</label>
+        <textarea class="field" id="pi" name="idea" required placeholder="What should the app do, and who is it for?"></textarea>
+        <div class="frow"><button class="btn" type="submit">Send project enquiry</button></div>
+        <p class="msg" role="status" aria-live="polite"></p>
+      </form>
     </div>
+  </section>
+</div>
 
-    <div class="app-card">
-      <div class="app-shot"><img src="assets/Stock%20Correlation.png" alt="Stock Correlations app logo"></div>
-      <div class="app-body">
-        <span class="badge">Awaiting Release</span>
-        <h3>Stock Correlations</h3>
-        <p>A market-analysis app for visualising correlations across stocks — in preview ahead of a store launch.</p>
-        <div class="store-badges"><span>Google Play — coming soon</span><span>App Store — coming soon</span></div>
-        <a class="app-link" href="https://stockcorrelation.netlify.app" target="_blank" rel="noopener">Preview →</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<div class="divider"></div>
-
-<section id="websites">
-  <div class="section-head">
-    <div class="num">Websites</div>
-    <h2>Full Websites, Built &amp; Deployed</h2>
-    <p>Complete website builds — from not-for-profit platforms to event and campaign sites.</p>
-  </div>
-  <div class="app-grid">
-
-    <div class="app-card">
-      <div class="app-shot"><img src="assets/Hole%20In%20The%20Clouds.jpg" alt="Hole in the Clouds website homepage screenshot"></div>
-      <div class="app-body">
-        <h3>Hole In The Clouds</h3>
-        <p>A not-for-profit providing direct, child-focused support for children and young people experiencing family separation.</p>
-        <a class="app-link" href="https://holeintheclouds.org/" target="_blank" rel="noopener">Visit site →</a>
-      </div>
-    </div>
-
-    <div class="app-card">
-      <div class="app-shot"><img src="assets/Pups%20of%20Honour.jpg" alt="Pups of Honour website homepage screenshot"></div>
-      <div class="app-body">
-        <h3>Pups of Honour</h3>
-        <p>A wedding-day planning quiz for couples who want their dog involved on the big day, done right.</p>
-        <a class="app-link" href="https://pupsofhonourquiz.netlify.app/" target="_blank" rel="noopener">Visit site →</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<footer>
-  &copy; Westeffects &middot; Built by Westworks &middot; <a href="mailto:westworks@westeffects.com">westworks@westeffects.com</a> &middot; <a href="/">Back to Westeffects</a>
-</footer>
-
+<footer><div class="wrap"><span>© Westeffects · Built by Westworks</span><a href="mailto:westworks@westeffects.com">westworks@westeffects.com</a></div></footer>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
