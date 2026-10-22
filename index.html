@@ -3,149 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Westeffects — Westbeat · Westworks · Westlight</title>
-<meta name="description" content="Westeffects is the umbrella for Westbeat (music production), Westworks (apps and software), and Westlight (photography).">
+<title>Westeffects — Apps, Music and Light Photography</title>
+<meta name="description" content="Westeffects is the home of Westworks (apps and software), Westbeat (music) and Westlight (light photography). Try the apps free, or get a custom app built.">
 <meta property="og:title" content="Westeffects">
-<meta property="og:description" content="Music. Software. Photography. Three passions, one name.">
+<meta property="og:description" content="Sound. Software. Sight. Free web apps, store releases coming, and custom builds.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://westeffects.com">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/favicon-180x180.png">
+<meta property="og:image" content="https://westeffects.com/westlight/full/sparks-02.jpg">
+<link rel="icon" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0a0a0a; --bg-raised:#131313; --line:#242424; --text:#f5f3ef; --muted:#8b8b8f;
-    --beat-a:#00e5ff; --beat-b:#ff2fd6;
-    --works:#ff5a1f;
-    --light-a:#ffb347; --light-b:#8b5cf6;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  body{background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; line-height:1.5;}
-  a{color:inherit; text-decoration:none;}
-  img{display:block; max-width:100%;}
-  h1,h2,h3{font-family:'Space Grotesk';}
-
-  header{
-    text-align:center; padding:16vh 6vw 8vh; position:relative; overflow:hidden;
-  }
-  header::before{
-    content:""; position:absolute; inset:-30% -10% auto -10%; height:150%;
-    background:
-      radial-gradient(ellipse 40% 35% at 20% 20%, rgba(0,229,255,.10), transparent 60%),
-      radial-gradient(ellipse 40% 35% at 50% 30%, rgba(255,90,31,.10), transparent 60%),
-      radial-gradient(ellipse 40% 35% at 80% 20%, rgba(139,92,246,.10), transparent 60%);
-    z-index:0;
-  }
-  .header-inner{position:relative; z-index:1;}
-  .kicker{font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); margin-bottom:20px;}
-  h1{font-size:clamp(44px,9vw,104px); font-weight:700; letter-spacing:-.02em;}
-  header p.tag{margin-top:20px; color:var(--muted); font-size:clamp(14px,1.8vw,17px);}
-  header p.sub{margin-top:8px; color:#5f5f62; font-size:13px;}
-
-  .brands{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
-    background:var(--line); border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-  }
-  @media (max-width:860px){ .brands{grid-template-columns:1fr;} }
-
-  .brand-card{
-    background:var(--bg); padding:8vh 5vw; position:relative; overflow:hidden;
-    display:flex; flex-direction:column; gap:20px; min-height:520px;
-    transition:background .3s;
-  }
-  .brand-card:hover{background:var(--bg-raised);}
-  .brand-card .glow{
-    position:absolute; inset:0; opacity:0; transition:opacity .4s; pointer-events:none;
-  }
-  .brand-card:hover .glow{opacity:1;}
-
-  .card-beat .glow{background:radial-gradient(circle at 30% 20%, rgba(0,229,255,.14), transparent 55%), radial-gradient(circle at 75% 75%, rgba(255,47,214,.12), transparent 55%);}
-  .card-works .glow{background:radial-gradient(circle at 30% 20%, rgba(255,90,31,.16), transparent 55%);}
-  .card-light .glow{background:radial-gradient(circle at 30% 20%, rgba(255,179,71,.14), transparent 55%), radial-gradient(circle at 75% 75%, rgba(139,92,246,.14), transparent 55%);}
-
-  .brand-card .content{position:relative; z-index:1; display:flex; flex-direction:column; gap:20px; height:100%;}
-  .brand-card .mark{width:64px; height:64px; object-fit:contain;}
-  .brand-card h2{font-size:26px; font-weight:700; letter-spacing:-.01em;}
-  .brand-card .tagline{font-size:15px; font-weight:600; color:var(--muted);}
-  .brand-card .desc{font-size:14px; color:var(--muted); line-height:1.7; flex:1;}
-  .card-beat .tagline{color:var(--beat-a);}
-  .card-works .tagline{color:var(--works);}
-  .card-light .tagline{color:var(--light-a);}
-
-  .enter{
-    margin-top:auto; display:inline-flex; align-items:center; gap:8px;
-    font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
-    padding:12px 0; border-top:1px solid var(--line); width:fit-content;
-    transition:gap .2s;
-  }
-  .brand-card:hover .enter{gap:14px;}
-
-  footer{text-align:center; padding:50px 6vw 60px; color:var(--muted); font-size:12px;}
-  footer a{border-bottom:1px solid transparent;}
-  footer a:hover{border-color:var(--muted);}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-
-<header>
-  <div class="header-inner">
-    <div class="kicker">westeffects.com</div>
-    <h1>WESTEFFECTS</h1>
-    <p class="tag">Sound. Software. Sight.</p>
-    <p class="sub">Three passions, one name. Pick a path below.</p>
-  </div>
-</header>
-
-<div class="brands" id="brands">
-
-  <a class="brand-card card-beat" href="/westbeat/">
-    <div class="glow"></div>
-    <div class="content">
-      <img class="mark" src="/assets/westbeat-logo.png" alt="Westbeat logo">
-      <div>
-        <h2>Westbeat</h2>
-        <p class="tagline">Music &amp; Sound, Built End-to-end.</p>
-      </div>
-      <p class="desc">Original Music Production, Live Sets &amp; Old-school Vinyl Sessions. Driven by a love for creating meaningful, moving experiences through atmospheric textures and dancefloor-ready rhythms — discover Westbeat's original releases and mixes.</p>
-      <span class="enter">Enter Westbeat &rarr;</span>
+<div class="wrap">
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="/"><img src="/assets/emblem-256.png" alt="Westeffects compass emblem" width="44" height="44"><span>WESTEFFECTS</span></a>
+    <div class="menu">
+      <a href="/westworks/">Apps</a><a href="/westbeat/">Music</a><a href="/westlight/">Light</a>
+      <a class="cta" href="/westworks/#build">Build me an app</a>
     </div>
-  </a>
+  </nav>
 
-  <a class="brand-card card-works" href="/westworks/">
-    <div class="glow"></div>
-    <div class="content">
-      <img class="mark" src="/assets/westworks-logo.png" alt="Westworks logo" onerror="this.style.display='none'">
-      <div>
-        <h2>Westworks</h2>
-        <p class="tagline">Apps &amp; Software, Built End-to-end.</p>
-      </div>
-      <p class="desc">Westworks designs and delivers apps and tools, from idea creation to a working, deployed product — web apps for everyday use, and mobile apps on their way to the App Store and Google Play.</p>
-      <span class="enter">Enter Westworks &rarr;</span>
+  <header class="hero">
+    <span class="kicker">Westworks · app studio</span>
+    <h1 class="disp">Apps that glow in the <em>dark</em>.</h1>
+    <p class="lead">Smart little tools for quoting, planning and deciding. Use them free on the web, or join the list for the store releases.</p>
+    <div class="row"><a class="btn" href="/westworks/">Browse the apps</a><a class="btn ghost" href="#notify">Get launch alerts</a></div>
+  </header>
+
+  <section class="block" aria-labelledby="now">
+    <div class="head-row"><h2 class="disp" id="now">Now showing</h2><a class="link-more" href="/westworks/">See all six →</a></div>
+    <div class="grid">
+      <article class="glass app" style="--c:#22E4FF"><div class="body"><div class="glyph">?!</div><span class="tag">Free · web</span><h3 class="disp">West Algorithm</h3><p>Do I stay or do I go? A fun decision-maker.</p><a class="btn ghost sm go" href="https://westygorithm.netlify.app" target="_blank" rel="noopener">Play free →</a></div></article>
+      <article class="glass app" style="--c:#FF3DCB"><div class="body"><div class="glyph">$</div><span class="tag">Free · web</span><h3 class="disp">Clean Quote Now</h3><p>Quote a cleaning job on the spot.</p><a class="btn ghost sm go" href="https://cleanquotenow.netlify.app" target="_blank" rel="noopener">Open app →</a></div></article>
+      <article class="glass app" style="--c:#B6FF5C"><div class="body"><div class="glyph">$$</div><span class="tag">Free · web</span><h3 class="disp">Green Quote Now</h3><p>Instant quotes for lawn and garden work.</p><a class="btn ghost sm go" href="https://greenquote.netlify.app" target="_blank" rel="noopener">Open app →</a></div></article>
+      <article class="glass app" style="--c:#FFB347"><div class="body"><div class="glyph">A→B</div><span class="tag">Free · web</span><h3 class="disp">Pathfinder Planner</h3><p>Plan the route, then work the plan.</p><a class="btn ghost sm go" href="https://pathfinderplanner.netlify.app" target="_blank" rel="noopener">Open app →</a></div></article>
+      <article class="glass app" style="--c:#FF3DCB"><div class="body"><div class="glyph">↑</div><span class="tag">Store release soon</span><h3 class="disp">Upgrade</h3><p>Turn upgrade ideas into action.</p><a class="btn ghost sm go" href="https://appgradeappideas.netlify.app" target="_blank" rel="noopener">Preview →</a></div></article>
+      <article class="glass app" style="--c:#22E4FF"><div class="body"><div class="glyph">≈</div><span class="tag">Store release soon</span><h3 class="disp">Stock Correlations</h3><p>See how ASX stocks move with the weather.</p><a class="btn ghost sm go" href="https://stockcorrelation.netlify.app" target="_blank" rel="noopener">Preview →</a></div></article>
     </div>
-  </a>
-
-  <a class="brand-card card-light" href="/westlight/">
-    <div class="glow"></div>
-    <div class="content">
-      <img class="mark" src="/assets/westlight-logo.png" alt="Westlight logo" onerror="this.style.display='none'">
-      <div>
-        <h2>Westlight</h2>
-        <p class="tagline">Light Photography with Meaningful Connection.</p>
-      </div>
-      <p class="desc">Using light as the medium to tell stories and capture intrigue. Explore three disciplines — Sparks, Fire and Light Painting — through unique long-exposure photography.</p>
-      <span class="enter">Enter Westlight &rarr;</span>
-    </div>
-  </a>
-
+  </section>
 </div>
 
-<footer>
-  &copy; Westeffects. Built by <a href="/westworks/">Westworks</a>.
-</footer>
+<section class="band" id="notify" aria-labelledby="notify-h">
+  <div class="wrap">
+    <div class="txt"><h2 class="disp" id="notify-h">First in line for the stores.</h2><p>Upgrade and Stock Correlations are heading to Google Play and the App Store. Get one email when they land.</p></div>
+    <div class="side">
+      <form class="cap" name="store-launch" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" data-success="You are on the list. We will email you at launch.">
+        <input type="hidden" name="form-name" value="store-launch">
+        <p class="hp"><label>Leave this empty <input name="bot-field"></label></p>
+        <div class="frow"><label class="sr" for="e1">Email address</label><input class="field" id="e1" name="email" type="email" required placeholder="you@email.com" autocomplete="email"><button class="btn" type="submit">Notify me</button></div>
+        <p class="msg" role="status" aria-live="polite"></p>
+      </form>
+      <div class="badges"><span>Google Play · soon</span><span>App Store · soon</span></div>
+    </div>
+  </div>
+</section>
 
+<div class="wrap">
+  <section class="block" aria-label="More from Westeffects">
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(340px,1fr))">
+      <a class="glass feature" href="/westbeat/"><img src="/assets/live-set.jpg" alt="Westbeat DJ playing vinyl at a live set" loading="lazy"><div class="cap"><span class="kicker">Westbeat</span><strong>Original music and vinyl sets</strong></div></a>
+      <a class="glass feature" href="/westlight/"><img src="/westlight/full/sparks-02.jpg" alt="Person inside a ring of steel wool sparks" loading="lazy"><div class="cap"><span class="kicker" style="color:var(--amber)">Westlight</span><strong>Sparks, fire and light painting</strong></div></a>
+    </div>
+  </section>
+
+  <section class="block" id="build" aria-labelledby="build-h">
+    <div class="glass panel">
+      <div class="txt"><h2 class="disp" id="build-h">Got an idea for an app?</h2><p>Westworks takes it from idea to a working, deployed product. Tell us what you need.</p></div>
+      <a class="btn" href="/westworks/#build">Start a project</a>
+    </div>
+  </section>
+</div>
+
+<footer><div class="wrap"><span>© Westeffects · Sound. Software. Sight.</span><a href="mailto:westworks@westeffects.com">westworks@westeffects.com</a></div></footer>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
