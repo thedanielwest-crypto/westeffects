@@ -13,44 +13,62 @@
 <link rel="icon" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
+<header class="top">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="/"><img src="/assets/emblem-256.png" alt="Westeffects compass emblem" width="34" height="34"><span>WESTEFFECTS</span></a>
+      <div class="menu">
+        <a href="/westworks/">Apps</a><a href="/westbeat/">Music</a><a href="/westlight/">Light</a>
+        <a class="cta" href="/westworks/#build">Start a project</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
 <div class="wrap">
-  <nav class="nav" aria-label="Main">
-    <a class="brand" href="/"><img src="/assets/emblem-256.png" alt="Westeffects compass emblem" width="44" height="44"><span>WESTEFFECTS</span></a>
-    <div class="menu">
-      <a href="/westworks/">Apps</a><a href="/westbeat/">Music</a><a href="/westlight/">Light</a>
-      <a class="cta" href="/westworks/#build">Build me an app</a>
+  <section class="hero" aria-labelledby="hero-h">
+    <span class="kicker">Apps · Music · Light photography</span>
+    <h1 class="disp" id="hero-h">Sound. Software.<br><span class="accent">Sight.</span></h1>
+    <div class="hero-foot">
+      <p class="lead">Westeffects is home to three studios. Westworks builds apps, from idea to a working, deployed product. Westbeat makes original music and vinyl sets. Westlight paints with sparks, fire and light.</p>
+      <div class="row"><a class="btn" href="/westworks/">Browse the apps</a><a class="btn ghost" href="/westworks/#build">Start a project</a></div>
     </div>
-  </nav>
+  </section>
 
-  <header class="hero">
-    <span class="kicker">Westworks · app studio</span>
-    <h1 class="disp">Apps that glow in the <em>dark</em>.</h1>
-    <p class="lead">Smart little tools for quoting, planning and deciding. Use them free on the web, or join the list for the store releases.</p>
-    <div class="row"><a class="btn" href="/westworks/">Browse the apps</a><a class="btn ghost" href="#notify">Get launch alerts</a></div>
-  </header>
+  <section class="trio" aria-label="The three studios">
+    <a href="/westworks/"><figure><img src="/westworks/img/snap-appraisal.jpg" alt="Snap Appraisal, built by Westworks"><figcaption><b>01 · Westworks</b><span>Apps and software</span></figcaption></figure></a>
+    <a href="/westbeat/"><figure><img src="/assets/live-set.jpg" alt="Westbeat DJ playing vinyl at a live set"><figcaption><b>02 · Westbeat</b><span>Music and vinyl sets</span></figcaption></figure></a>
+    <a href="/westlight/"><figure><img src="/westlight/full/sparks-02.jpg" alt="Person inside a ring of steel wool sparks"><figcaption><b>03 · Westlight</b><span>Sparks, fire, light painting</span></figcaption></figure></a>
+  </section>
+</div>
 
-  <section class="block" aria-labelledby="now">
-    <div class="head-row"><h2 class="disp" id="now">Now showing</h2><a class="link-more" href="/westworks/">See all apps →</a></div>
+<div class="rule"></div>
+
+<div class="wrap">
+  <section class="block" aria-labelledby="now" style="padding-top:96px">
+    <div class="head-row"><h2 class="disp" id="now">Selected apps</h2><a class="link-more" href="/westworks/">See all apps →</a></div>
     <div class="grid">
-      <article class="glass app" style="--c:#22E4FF"><div class="body"><div class="glyph">↻</div><span class="tag">Free · web</span><h3 class="disp">Where To Next?</h3><p>Spin the wheel. Let the night decide.</p><a class="btn ghost sm go" href="https://hey-where-to-next.netlify.app" target="_blank" rel="noopener">Play free →</a></div></article>
-      <article class="glass app" style="--c:#FF3DCB"><div class="body"><div class="glyph">$</div><span class="tag">Free · web</span><h3 class="disp">Clean Quote Now</h3><p>Quote a cleaning job on the spot.</p><a class="btn ghost sm go" href="https://cleanquotenow.netlify.app" target="_blank" rel="noopener">Open app →</a></div></article>
-      <article class="glass app" style="--c:#B6FF5C"><div class="body"><div class="glyph">$$</div><span class="tag">Free · web</span><h3 class="disp">Green Quote Now</h3><p>Instant quotes for lawn and garden work.</p><a class="btn ghost sm go" href="https://greenquote.netlify.app" target="_blank" rel="noopener">Open app →</a></div></article>
-      <article class="glass app" style="--c:#FFB347"><div class="body"><div class="glyph">A→B</div><span class="tag">Free · web</span><h3 class="disp">Pathfinder Planner</h3><p>Plan the route, then work the plan.</p><a class="btn ghost sm go" href="https://pathfinderplanner.netlify.app" target="_blank" rel="noopener">Open app →</a></div></article>
-      <article class="glass app" style="--c:#B6FF5C"><div class="body"><div class="glyph">✦</div><span class="tag">Free · web</span><h3 class="disp">CosFinder</h3><p>Find the cosplay maker behind the build.</p><a class="btn ghost sm go" href="https://cosfinder-app.netlify.app" target="_blank" rel="noopener">Open app →</a></div></article>
-      <article class="glass app" style="--c:#FFB347"><div class="body"><div class="glyph">▣</div><span class="tag">Free · web</span><h3 class="disp">HangSpace</h3><p>Real art for real walls, plus a monthly auction.</p><a class="btn ghost sm go" href="https://hangspace-app.netlify.app" target="_blank" rel="noopener">Open app →</a></div></article>
-      <article class="glass app" style="--c:#FF3DCB"><div class="body"><div class="glyph">↑</div><span class="tag">Store release soon</span><h3 class="disp">AppGrade</h3><p>Capture an idea, get an honest score.</p><a class="btn ghost sm go" href="https://appgradeappideas.netlify.app" target="_blank" rel="noopener">Preview →</a></div></article>
-      <article class="glass app" style="--c:#22E4FF"><div class="body"><div class="glyph">≈</div><span class="tag">Store release soon</span><h3 class="disp">Stock Correlations</h3><p>See how ASX stocks move with the weather.</p><a class="btn ghost sm go" href="https://stockcorrelation.netlify.app" target="_blank" rel="noopener">Preview →</a></div></article>
+      <article class="app"><a class="shot" href="https://cleanquotenow.netlify.app" target="_blank" rel="noopener"><img src="/westworks/assets/Clean%20Quote.png" alt="Clean Quote Now screenshot" loading="lazy"></a><div class="body"><span class="tag">Free web app</span><h3 class="disp">Clean Quote Now</h3><p>Quote a cleaning job on the spot. Fast, no-fuss and professional.</p></div></article>
+      <article class="app"><a class="shot" href="https://pathfinderplanner.netlify.app" target="_blank" rel="noopener"><img src="/westworks/assets/Pathway.png" alt="Pathfinder Planner screenshot" loading="lazy"></a><div class="body"><span class="tag">Free web app</span><h3 class="disp">Pathfinder Planner</h3><p>Plan the route, then work the plan. Set a destination and risk-check it.</p></div></article>
+      <article class="app"><a class="shot" href="https://hangspace-app.netlify.app" target="_blank" rel="noopener"><img src="/westworks/img/hangspace.jpg" alt="HangSpace screenshot" loading="lazy"></a><div class="body"><span class="tag">Marketplace</span><h3 class="disp">HangSpace</h3><p>Real art for real walls, plus a monthly auction.</p></div></article>
     </div>
+    <ul class="applist">
+      <li><a href="https://hey-where-to-next.netlify.app" target="_blank" rel="noopener"><span class="n">Where To Next?</span><span class="k">Free web app</span><span class="d">Spin the wheel. Let the night decide.</span><span class="ar" aria-hidden="true">→</span></a></li>
+      <li><a href="https://greenquote.netlify.app" target="_blank" rel="noopener"><span class="n">Green Quote Now</span><span class="k">Free web app</span><span class="d">Instant quotes for lawn and garden work.</span><span class="ar" aria-hidden="true">→</span></a></li>
+      <li><a href="https://cosfinder-app.netlify.app" target="_blank" rel="noopener"><span class="n">CosFinder</span><span class="k">Directory</span><span class="d">Find the cosplay maker behind the build.</span><span class="ar" aria-hidden="true">→</span></a></li>
+      <li><a href="https://appgradeappideas.netlify.app" target="_blank" rel="noopener"><span class="n">AppGrade</span><span class="k">Store release soon</span><span class="d">Capture an idea, get an honest score.</span><span class="ar" aria-hidden="true">→</span></a></li>
+      <li><a href="https://stockcorrelation.netlify.app" target="_blank" rel="noopener"><span class="n">Stock Correlations</span><span class="k">Store release soon</span><span class="d">See how ASX stocks move with the weather.</span><span class="ar" aria-hidden="true">→</span></a></li>
+    </ul>
   </section>
 </div>
 
 <section class="band" id="notify" aria-labelledby="notify-h">
   <div class="wrap">
-    <div class="txt"><h2 class="disp" id="notify-h">First in line for the stores.</h2><p>Upgrade and Stock Correlations are heading to Google Play and the App Store. Get one email when they land.</p></div>
+    <div class="txt"><h2 class="disp" id="notify-h">First in line for the stores.</h2><p>AppGrade and Stock Correlations are heading to Google Play and the App Store. Get one email when they land.</p></div>
     <div class="side">
       <form class="cap" name="store-launch" method="POST" data-success="You are on the list. We will email you at launch.">
         <input type="hidden" name="form-name" value="store-launch">
@@ -58,26 +76,24 @@
         <div class="frow"><label class="sr" for="e1">Email address</label><input class="field" id="e1" name="email" type="email" required placeholder="you@email.com" autocomplete="email"><button class="btn" type="submit">Notify me</button></div>
         <p class="msg" role="status" aria-live="polite"></p>
       </form>
-      <div class="badges"><span>Google Play · soon</span><span>App Store · soon</span></div>
     </div>
   </div>
 </section>
 
 <div class="wrap">
-  <section class="block" aria-label="More from Westeffects">
-    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(340px,1fr))">
-      <a class="glass feature" href="/westbeat/"><img src="/assets/live-set.jpg" alt="Westbeat DJ playing vinyl at a live set" loading="lazy"><div class="cap"><span class="kicker">Westbeat</span><strong>Original music and vinyl sets</strong></div></a>
-      <a class="glass feature" href="/westlight/"><img src="/westlight/full/sparks-02.jpg" alt="Person inside a ring of steel wool sparks" loading="lazy"><div class="cap"><span class="kicker" style="color:var(--amber)">Westlight</span><strong>Sparks, fire and light painting</strong></div></a>
-    </div>
-  </section>
-
-  <section class="block" id="build" aria-labelledby="build-h">
-    <div class="glass panel">
-      <div class="txt"><h2 class="disp" id="build-h">Got an idea for an app?</h2><p>Westworks takes it from idea to a working, deployed product. Tell us what you need.</p></div>
-      <a class="btn" href="/westworks/#build">Start a project</a>
-    </div>
+  <section class="studios" aria-label="More from Westeffects">
+    <a class="feature" href="/westbeat/"><img src="/assets/live-set.jpg" alt="Westbeat DJ playing vinyl at a live set" loading="lazy"><div class="cap"><strong>Westbeat</strong><span>Original music and vinyl sets →</span></div></a>
+    <a class="feature" href="/westlight/"><img src="/westlight/full/lp-01.jpg" alt="Light painting by Westlight" loading="lazy"><div class="cap"><strong>Westlight</strong><span>Sparks, fire and light painting →</span></div></a>
   </section>
 </div>
+
+<section class="dark" id="build" aria-labelledby="build-h">
+  <div class="wrap">
+    <h2 class="disp" id="build-h">Got an idea<br>for an app?</h2>
+    <p>Westworks takes it from idea to a working, deployed product. Tell us what you need and we'll come back with a plan and a quote.</p>
+    <a class="btn on-dark" href="/westworks/#build">Start a project</a>
+  </div>
+</section>
 
 <footer><div class="wrap"><span>© Westeffects · Sound. Software. Sight.</span><a href="mailto:westworks@westeffects.com">westworks@westeffects.com</a></div></footer>
 <script src="/assets/site.js" defer></script>
